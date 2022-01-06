@@ -5,3 +5,5 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## About the project
 
 This is a simple covid-19 app. Used technologies: React, Typescript, Graphql, Apollo.
+
+# -> [Link here](https://covid-19-tracker-hun.netlify.app/) <-
