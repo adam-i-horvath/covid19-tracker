@@ -43,15 +43,16 @@ function GetCovidData() {
       ) : (
         <div>
           <h1>COVID-19 in Hungary</h1>
+
           <h3>JSON</h3>
           {JSON.stringify(data)}
 
-          <h3>Data</h3>
+          <h3>Status</h3>
           <p>Cases: {data!.country.cases.toLocaleString('uk')}</p>
           <p>Deaths: {data!.country.deaths.toLocaleString('uk')}</p>
           <p>Today cases: {data!.country.todayCases.toLocaleString('uk')}</p>
 
-          <h3>ANALYSIS</h3>
+          <h3>Analysis</h3>
           <h4>Cases</h4>
           <p>Status: {data!.country.analysis.cases.status}</p>
           <p>Percentage: {data!.country.analysis.cases.percentage}</p>
@@ -63,21 +64,31 @@ function GetCovidData() {
           <h4>Recovered</h4>
           <p>Status: {data!.country.analysis.recovered.status}</p>
           <p>Percentage: {data!.country.analysis.recovered.percentage}</p>
-
-          <p>Used technologies: React, Typescript, Graphql, Apollo</p>
-          <span>Used API: https://corona-graphql.herokuapp.com/</span>
+          <div className="app__footer">
+            <p>
+              created by{' '}
+              <a href="https://github.com/adam-i-horvath">adam horvath</a>
+            </p>
+            <p>Used technologies: React, Typescript, Graphql, Apollo</p>
+            <span>
+              Used API:{' '}
+              <a href="https://corona-graphql.herokuapp.com/">
+                https://corona-graphql.herokuapp.com/
+              </a>
+            </span>
+          </div>
         </div>
       )}
     </div>
   );
 }
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
+    <div className="app">
       <GetCovidData />
     </div>
   );
-}
+};
 
 export default App;
